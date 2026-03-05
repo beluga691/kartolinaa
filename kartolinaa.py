@@ -2,12 +2,12 @@ import streamlit as st
 
 # Konfigurimi i faqes
 st.set_page_config(
-    page_title="Gëzuar 7 Marsin 2026",
+    page_title="Dita e Mësuesit - 7 Mars 2026",
     page_icon="🎓",
     layout="centered"
 )
 
-# CSS Stili i përditësuar
+# CSS Stili
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Pinyon+Script&display=swap');
@@ -16,121 +16,88 @@ st.markdown("""
     background-color: #FDFCF8;
 }
 
-/* Animacion për hyrjen e tekstit */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-    animation: fadeIn 1.5s ease-out;
-}
-
 .header-date {
-    font-size: 0.9rem;
-    letter-spacing: 0.3em;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: #D4AF37;
     text-align: center;
-    font-weight: bold;
-    margin-top: 2rem;
 }
 
 .header-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 600;
     color: #1A1A1A;
     text-align: center;
-    margin-bottom: 0.5rem;
 }
 
 .header-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
     color: #525252;
     text-align: center;
-    font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
 .teacher-name {
     font-family: 'Pinyon Script', cursive;
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     color: #D4AF37;
     text-align: center;
-    margin-top: 1rem;
 }
 
 .subject {
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #525252;
-    text-align: center;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #D4AF37;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.message {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    line-height: 2;
-    color: #222;
-    text-align: center;
-    margin: 2rem auto;
-    max-width: 600px;
-    font-style: italic;
-}
-
-.signature {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.2rem;
-    color: #4A5D4F;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.signature-from {
     font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #525252;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.message {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signature {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.75rem;
+    color: #4A5D4F;
+    text-align: center;
+}
+
+.signature-from {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #525252;
+    text-align: center;
 }
 
 .divider {
-    width: 120px;
-    height: 1px;
-    background: #D4AF37;
-    margin: 2rem auto;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    margin: 1rem auto;
 }
 
 .footer {
     font-size: 0.75rem;
     color: #999;
     text-align: center;
-    margin-top: 5rem;
-    letter-spacing: 0.1em;
+    margin-top: 3rem;
 }
 
-/* Fshehja e elementeve te default te Streamlit */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
-
-/* Stilimi i Input-it */
-div[data-baseweb="input"] {
-    border-radius: 0px;
-    border-bottom: 1px solid #D4AF37;
-}
 </style>
 """, unsafe_allow_html=True)
 
-# Të dhënat e mësuesve (Data e përditësuar në mesazhe)
+# Te dhenat e mesuesve (Viti 2026 i reflektuar)
 TEACHERS = {
     "yllka": {
         "name": "Yllka",
@@ -183,7 +150,7 @@ TEACHERS = {
         "message": "Ju na mësuat se bota nuk është vetëm ashtu siç duket, por ashtu siç ne zgjedhim ta pikturojmë. Faleminderit që na dhatë guximin të përdorim ngjyrat tona më të forta dhe që e kthyet klasën tonë në një galeri shpresash."
     },
     "aveniri": {
-        "name": "Aveniri",
+        "name": "Avenir",
         "subject": "Fiskulturë",
         "message": "Ju ishit forca që na nxiti të vrapojmë më shpejt se dyshimet tona. Në çdo garë e në çdo stërvitje, na mësuat se fitorja e vërtetë nuk është trofeu, por disiplina për t'u ngritur sërish pas çdo rrëzimi. Mirënjohje për energjinë tuaj!"
     },
@@ -194,7 +161,7 @@ TEACHERS = {
     }
 }
 
-# State Management
+# Inicializimi i state
 if "show_message" not in st.session_state:
     st.session_state.show_message = False
 if "teacher" not in st.session_state:
@@ -207,38 +174,35 @@ def reset():
     st.session_state.show_message = False
     st.session_state.teacher = None
 
-# LOGJIKA E FAQES
+# FAQJA KRYESORE
 if not st.session_state.show_message:
-    st.markdown('<div class="fade-in">', unsafe_allow_html=True)
     st.markdown('<p class="header-date">7 Mars 2026</p>', unsafe_allow_html=True)
     st.markdown('<h1 class="header-title">Dita e Mësuesit</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="header-subtitle">Një udhëtim mirënjohjeje në çdo rresht</p>', unsafe_allow_html=True)
+    st.markdown('<p class="header-subtitle">Një falënderim i veçantë për ju</p>', unsafe_allow_html=True)
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        name = st.text_input("Shkruani emrin për të hapur kartolinën", placeholder="Emri i mësuesit (psh. Yllka)...")
+        # Këtu hoqa placeholder-in "psh. Yllka"
+        name = st.text_input("Shkruani emrin tuaj", placeholder="Emri...")
         
-        st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("Hap Kartolinën", use_container_width=True):
+        if st.button("Zbulo Mesazhin", use_container_width=True, type="primary"):
             teacher = find_teacher(name)
             if teacher:
                 st.session_state.teacher = teacher
                 st.session_state.show_message = True
                 st.rerun()
             else:
-                st.error("Kërkojmë ndjesë, kjo kartolinë nuk u gjet. Ju lutem kontrolloni emrin.")
-    st.markdown('</div>', unsafe_allow_html=True)
+                st.error("Kërkojmë ndjesë, emri nuk u gjet.")
 
 else:
     teacher = st.session_state.teacher
-    st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-    st.markdown('<p class="header-date">7 Mars 2026</p>', unsafe_allow_html=True)
+    
     st.markdown(f'<h2 class="teacher-name">{teacher["name"]}</h2>', unsafe_allow_html=True)
-    st.markdown(f'<center><p class="subject">{teacher["subject"]}</p></center>', unsafe_allow_html=True)
-    st.markdown(f'<p class="message">"{teacher["message"]}"</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="subject">{teacher["subject"]}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="message">{teacher["message"]}</p>', unsafe_allow_html=True)
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-    st.markdown('<p class="signature">Me dashuri dhe mirënjohje të pafundme,</p>', unsafe_allow_html=True)
+    st.markdown('<p class="signature">Me dashuri dhe mirënjohje</p>', unsafe_allow_html=True)
     st.markdown('<p class="signature-from">Dioni, Rudolfi dhe Ema</p>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -246,6 +210,5 @@ else:
         if st.button("Kthehu Mbrapa", use_container_width=True):
             reset()
             st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown('<p class="footer">Krijuar me përkushtim nga Dioni, Rudolfi dhe Ema • 2026</p>', unsafe_allow_html=True)
+st.markdown('<p class="footer">Ndërtuar me dashuri nga Dioni, Rudolfi dhe Ema • 2026</p>', unsafe_allow_html=True)
