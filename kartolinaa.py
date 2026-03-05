@@ -97,71 +97,76 @@ header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
-# Te dhenat e mesuesve (Viti 2026 i reflektuar)
+# Lista e zgjeruar e mësuesve (Shtuar Monika, Emiliana, Majlinda, Elena, Ajbana, Albana, Anila, Arta, Erida, Laura)
 TEACHERS = {
-    "yllka": {
-        "name": "Yllka",
-        "subject": "Biologji • Mësuese Kujdestare",
-        "message": "Në librin e rritjes sonë, ju jeni kapitulli që na mësoi se jeta nuk është thjesht një bashkësi qelizash që lëvizin, por një mrekulli që duhet mbrojtur me dashuri. Si mësuese kujdestare, ju ishit dora që na mbajti kur u rrezikuam të rrëzoheshim dhe zëri që na dha kurajo kur heshtëm. Në këtë 7 Mars 2026, duam t'ju themi se jeni 'shkenca' më njerëzore që kemi njohur ndonjëherë."
+    # Mesuesit e fillores
+    "monika": {
+        "name": "Monika",
+        "subject": "Mësuese Fillore",
+        "message": "Ju ishit dritarja jonë e parë drejt botës së dijes. Faleminderit që me ëmbëlsinë tuaj na mësuat shkronjat e para dhe na mbajtët dorën në hapat tanë më të rëndësishëm. Mirënjohje për durimin dhe dashurinë që na dhuruat!"
     },
-    "egla": {
-        "name": "Egla",
+    "emiliana": {
+        "name": "Emiliana",
+        "subject": "Mësuese Fillore",
+        "message": "Çdo fëmijë ka nevojë për një mësuese që beson tek ai, dhe ne jemi me fat që ju patëm ju. Faleminderit që i kthyet orët e mësimit në momente magjike dhe që na rritët me vlerat më të bukura njerëzore."
+    },
+    "majlinda": {
+        "name": "Majlinda",
+        "subject": "Mësuese Fillore",
+        "message": "Në kujtimet tona më të bukura të fëmijërisë, ju keni një vend të veçantë. Faleminderit që me profesionalizëm dhe buzëqeshje na treguat se si të bëhemi nxënës të mirë dhe njerëz të vlefshëm."
+    },
+    "elena": {
+        "name": "Elena",
+        "subject": "Mësuese Fillore",
+        "message": "Ju na mësuat se shkolla nuk është thjesht një ndërtesë, por një shtëpi e dytë ku mësohet dashuria për librin. Mirënjohje për çdo këshillë dhe për çdo fjalë të ngrohtë që na keni dhënë."
+    },
+    # Lendet e tjera
+    "ajbana": {
+        "name": "Ajbana",
+        "subject": "Frëngjisht",
+        "message": "Merci beaucoup për çdo orë mësimi që na bëri të udhëtojmë drejt kulturës dhe elegancës franceze. Ju na mësuat se gjuha është një urë që na lidh me botën, dhe na e bëtë këtë udhëtim shumë të bukur."
+    },
+    "albana": {
+        "name": "Albana",
+        "subject": "Psikologji",
+        "message": "Në labirintin e mendimeve dhe emocioneve tona, ju ishit udhërrëfyesja më e mirë. Faleminderit që na mësuat se si të kuptojmë veten dhe të tjerët, duke na dhënë çelësin e një mendjeje të shëndoshë."
+    },
+    "anila": {
+        "name": "Anila",
+        "subject": "Gjeografi • Histori",
+        "message": "Me ju, ne udhëtuam nëpër kohë dhe nëpër kontinente pa lëvizur nga klasa. Faleminderit që na treguat se sa e pasur është bota jonë dhe sa e rëndësishme është të njohim rrënjët tona."
+    },
+    "arta": {
+        "name": "Arta",
+        "subject": "Oficere e Sigurisë",
+        "message": "Përtej rregullit dhe sigurisë, ju jeni për ne një mbështetje e vazhdueshme. Faleminderit që kujdeseni për ne çdo ditë dhe që na bëni të ndihemi të mbrojtur në ambientet e shkollës sonë."
+    },
+    "erida": {
+        "name": "Erida",
         "subject": "Gjuhë Shqipe",
-        "message": "Ju na mësuat se gjuha jonë nuk është thjesht mjet komunikimi, por një kështjellë ku rri e fshehur shpirti i kombit. Me durimin e një shkrimtareje, ju i dhashë ngjyrë çdo fjalie tonë dhe na treguat se si ta duam veten përmes vargut e rreshtit. Faleminderit që na bëtë personazhe të bukur në faqet e kësaj shkolle."
+        "message": "Fjala shqipe në gojën tuaj merr një tjetër vlerë. Faleminderit që na mësuat t'i shkruajmë ëndrrat tona bukur dhe që na rrënjosët dashurinë për leximin dhe korrektësinë e gjuhës sonë amtare."
     },
-    "loreta": {
-        "name": "Loreta",
-        "subject": "Gjeografi • Qytetari",
-        "message": "Harta e botës në sytë tanë do të ishte e zbrazët pa shpjegimet tuaja që i dhanë jetë çdo mali e lumi. Por mbi të gjitha, ju vizatuat te ne hartën e vlerave, duke na treguar se përpara se të bëhemi udhëtarë të botës, duhet të mësojmë të jemi njerëz me integritet. Mirënjohje për çdo horizont që na hapët."
-    },
-    "sava": {
-        "name": "Sava",
-        "subject": "Histori",
-        "message": "Përmes zërit tuaj, pluhuri i shekujve u shndërrua në dritë. Ju na treguat se ne nuk jemi thjesht kalimtarë, por pasardhës të një historie që duhet ta nderojmë. Faleminderit që na mësuat se e ardhmja shkruhet më mirë kur nuk e harrojmë kurrë të shkuarën tonë."
-    },
-    "irvena": {
-        "name": "Irvena",
-        "subject": "Italisht",
-        "message": "Orët tuaja ishin si një dritare e hapur nga ku hynte aroma e detit dhe melodia e një gjuhe që fluturon. Me ju, ne nuk mësuam thjesht fjalë të reja, por mësuam stilin dhe hijeshinë e një kulture që na bëri t'i shohim gjërat me më shumë ëmbëlsi. Grazie di cuore për çdo buzëqeshje."
-    },
-    "gladiola": {
-        "name": "Gladiola",
-        "subject": "Anglisht",
-        "message": "Në botën e madhe që na pret jashtë këtyre mureve, ju na dhatë çelësin më të rëndësishëm. Anglishtja juaj ishte më shumë se mësim; ishte premtimi se asnjë ëndërr nuk do të jetë e paarritshme sepse tani ne dimë të flasim gjuhën e mundësive."
-    },
-    "liza": {
-        "name": "Liza",
+    "laura": {
+        "name": "Laura",
         "subject": "Matematikë",
-        "message": "Në labirintin e numrave dhe formulave, ju ishit drita që na udhëhoqi drejt logjikës së pastër. Na mësuat se edhe ekuacioni më i ndërlikuar ka një zgjidhje nëse ke durim e vullnet. Faleminderit që nuk hoqët dorë nga ne deri sa çdo 'X' i panjohur u bë i qartë në mendjet tona."
+        "message": "Edhe llogaritë më të vështira duken të thjeshta kur i shpjegoni ju. Faleminderit që na stërvitët mendjen me logjikë dhe që na treguat se me përkushtim, çdo ekuacion jetësor mund të zgjidhet."
     },
-    "xheni": {
-        "name": "Xheni",
-        "subject": "Informatikë",
-        "message": "Ju na treguat se e ardhmja nuk është një mister, por një kod që ne mund ta shkruajmë vetë. Faleminderit që na përgatitët për epokën e re me profesionalizëm dhe që na mësuat se pas çdo ekrani, njeriu mbetet programi më i rëndësishëm."
-    },
-    "andi": {
-        "name": "Andi",
-        "subject": "Muzikë",
-        "message": "Nëse shkolla jonë do të ishte një simfoni, ju do të ishit dirigjenti që i dha kuptim çdo note. Faleminderit që na mësuat se jeta ka ritmin e saj dhe se sekreti i vërtetë qëndron te harmonia që krijojmë me njëri-tjetrin."
-    },
-    "andoni": {
-        "name": "Andoni",
-        "subject": "Vizatim",
-        "message": "Ju na mësuat se bota nuk është vetëm ashtu siç duket, por ashtu siç ne zgjedhim ta pikturojmë. Faleminderit që na dhatë guximin të përdorim ngjyrat tona më të forta dhe që e kthyet klasën tonë në një galeri shpresash."
-    },
-    "aveniri": {
-        "name": "Avenir",
-        "subject": "Fiskulturë",
-        "message": "Ju ishit forca që na nxiti të vrapojmë më shpejt se dyshimet tona. Në çdo garë e në çdo stërvitje, na mësuat se fitorja e vërtetë nuk është trofeu, por disiplina për t'u ngritur sërish pas çdo rrëzimi. Mirënjohje për energjinë tuaj!"
-    },
-    "zeni": {
-        "name": "Zeni",
-        "subject": "Fiskulturë",
-        "message": "Me ju, palestra nuk ishte thjesht një hapësirë fizike, por një shkollë e karakterit. Na mësuat se trupi i fortë duhet të shoqërohet nga një mendje e fortë dhe se me vullnet, çdo pengesë kthehet në një trampolinë drejt suksesit."
-    }
+    # Mesuesit e vjeter (te ruajtur ne kod)
+    "yllka": {"name": "Yllka", "subject": "Biologji • Mësuese Kujdestare", "message": "Në librin e rritjes sonë, ju jeni kapitulli që na mësoi se jeta nuk është thjesht një bashkësi qelizash, por një mrekulli. Faleminderit si mësuese kujdestare!"},
+    "egla": {"name": "Egla", "subject": "Gjuhë Shqipe", "message": "Ju na mësuat se gjuha jonë nuk është thjesht mjet komunikimi, por kështjellë e shpirtit të kombit. Faleminderit!"},
+    "loreta": {"name": "Loreta", "subject": "Gjeografi • Qytetari", "message": "Harta e botës do të ishte e zbrazët pa shpjegimet tuaja. Ju vizatuat te ne hartën e vlerave njerëzore."},
+    "sava": {"name": "Sava", "subject": "Histori", "message": "Përmes zërit tuaj, pluhuri i shekujve u shndërrua në dritë. Faleminderit që na mësuat historinë!"},
+    "irvena": {"name": "Irvena", "subject": "Italisht", "message": "Orët tuaja ishin si një dritare nga ku hynte melodia e një gjuhe që fluturon. Grazie di cuore!"},
+    "gladiola": {"name": "Gladiola", "subject": "Anglisht", "message": "Në botën e madhe, ju na dhatë çelësin më të rëndësishëm: gjuhën e mundësive të pafundme."},
+    "liza": {"name": "Liza", "subject": "Matematikë", "message": "Në labirintin e numrave, ju ishit drita drejt logjikës së pastër. Faleminderit për durimin!"},
+    "xheni": {"name": "Xheni", "subject": "Informatikë", "message": "Ju na treguat se e ardhmja nuk është mister, por një kod që mund ta shkruajmë vetë."},
+    "andi": {"name": "Andi", "subject": "Muzikë", "message": "Nëse shkolla do ishte simfoni, ju do ishit dirigjenti që i dha kuptim çdo note."},
+    "andoni": {"name": "Andoni", "subject": "Vizatim", "message": "Ju na mësuat se bota është ashtu siç ne zgjedhim ta pikturojmë. Faleminderit për ngjyrat!"},
+    "aveniri": {"name": "Aveniri", "subject": "Fiskulturë", "message": "Ju ishit forca që na nxiti të vrapojmë më shpejt se dyshimet tona. Mirënjohje!"},
+    "zeni": {"name": "Zeni", "subject": "Fiskulturë", "message": "Me ju, palestra u bë shkollë e karakterit dhe vullnetit të fortë."}
 }
 
-# Inicializimi i state
+# State Management
 if "show_message" not in st.session_state:
     st.session_state.show_message = False
 if "teacher" not in st.session_state:
@@ -183,7 +188,6 @@ if not st.session_state.show_message:
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        # Këtu hoqa placeholder-in "psh. Yllka"
         name = st.text_input("Shkruani emrin tuaj", placeholder="Emri...")
         
         if st.button("Zbulo Mesazhin", use_container_width=True, type="primary"):
@@ -193,11 +197,10 @@ if not st.session_state.show_message:
                 st.session_state.show_message = True
                 st.rerun()
             else:
-                st.error("Kërkojmë ndjesë, emri nuk u gjet.")
+                st.markdown('<p class="error" style="text-align:center; color:red;">Emri nuk u gjet. Provoni psh: Monika, Laura, ose Erida.</p>', unsafe_allow_html=True)
 
 else:
     teacher = st.session_state.teacher
-    
     st.markdown(f'<h2 class="teacher-name">{teacher["name"]}</h2>', unsafe_allow_html=True)
     st.markdown(f'<p class="subject">{teacher["subject"]}</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="message">{teacher["message"]}</p>', unsafe_allow_html=True)
