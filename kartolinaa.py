@@ -214,4 +214,4 @@ else:
             reset()
             st.rerun()
 
-st.markdown('<p class="footer">Ndërtuar me dashuri nga Dioni, Rudolfi dhe Ema • 2026</p>', unsafe_allow_html=True)
+st.markdown('<p class="footer">Ndërtuar me dashuri nga Klubi i Tikut • 2026</p>', unsafe_allow_html=True)
